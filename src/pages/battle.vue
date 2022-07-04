@@ -6,6 +6,5 @@ const { currentColor } = storeToRefs(useColorPicker())
 
 <template>
   <BattleGrid :size="10" />
-    {{ currentColor }}
   <ColorPicker mt-5 />
 </template>
