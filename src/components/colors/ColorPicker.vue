@@ -1,11 +1,9 @@
 <script setup lang="ts">
-  const { colors, setCurrentColor} = useColorPicker()
+const { colors, setCurrentColor } = useColorPicker()
 </script>
 
-
 <template>
-  <div grid justify-center gap-4 grid-flow-col>
-    
-    <div cursor-pointer rounded-md w-10 h-10 @click="setCurrentColor(color)" v-for="color in colors" :style="{'backgroundColor': color}" />
+  <div grid justify-center gap-2 md:gap-4 grid-flow-col>
+    <div v-for="(color, i) in colors" :key="i" cursor-pointer rounded-md w-9 h-9 md:w-10 md:h-10 :style="{ backgroundColor: color }" @click="setCurrentColor(color)" />
   </div>
 </template>

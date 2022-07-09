@@ -24,7 +24,7 @@ export default function useSupabase(gameId: string) {
         })
     })
   }
-  const upsertSquare = async (square: Partial<Square>) => {
+  const upsertSquare = async (square: Omit<Square, 'id'>) => {
     return await supabase
       .from('square')
       .upsert({ ...square, gameId })
